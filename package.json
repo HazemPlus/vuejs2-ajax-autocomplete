@@ -8,9 +8,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hazemPlus/vuejs2-ajax-suggestion-search.git"
+    "url": "git+https://github.com/HazemPlus/vuejs2-ajax-suggestion-search.git"
   },
   "keywords": [
+    "vue",
+    "vuejs",
     "vuejs2",
     "suggestion",
     "search",
@@ -19,9 +21,9 @@
   "author": "Mohammad Abedi <mabedi811@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hazemPlus/vuejs2-ajax-suggestion-search/issues"
+    "url": "https://github.com/HazemPlus/vuejs2-ajax-suggestion-search/issues"
   },
-  "homepage": "https://github.com/hazemPlus/vuejs2-ajax-suggestion-search#readme",
+  "homepage": "https://github.com/HazemPlus/vuejs2-ajax-suggestion-search#readme",
   "dependencies": {
     "axios": "^0.19.0"
   }

@@ -1,7 +1,7 @@
 <template>
     <div class="ajax-suggestion-search-input">
         <input v-model="search" v-on:keyup="onKeyUp" class="form-control" :class="inputClass" type="text" />
-        <div>
+        <div v-if="results.length">
             <ul>
                 <li v-for="result in results" v-bind:key="result.id" :class="[{'has-image': result.img!=undefined}, {'has-subtitle': result.subtitle!=undefined}]">
                     <img :src="result.img" width="38" height="38"/>
@@ -20,25 +20,7 @@
         data() {
             return {
                 search: '',
-                results: [
-                    {
-                        id: 1,
-                        title: 'Sirvan Khosravi',
-                        subtitle: 'Tehran, Iran',
-                        img: 'https://www.vowave.com/uploads/arts/PjsWjz/122_ZduQ4UKGntg5iqAZMSKL_s.jpg'
-                    },
-                    {
-                        id: 2,
-                        title: 'Sirvan Khosravi',
-                        subtitle: 'Tehran, Iran',
-                        img: 'https://www.vowave.com/uploads/arts/PjsWjz/122_ZduQ4UKGntg5iqAZMSKL_s.jpg'
-                    },
-                    {
-                        id: 3,
-                        title: 'Sirvan Khosravi',
-                        img: 'https://www.vowave.com/uploads/arts/PjsWjz/122_ZduQ4UKGntg5iqAZMSKL_s.jpg'
-                    }
-                ]
+                results: []
             }
         },
         props: {
@@ -47,13 +29,27 @@
                 default: function () { return [] },
                 validator: (classes) => classes.every(e => typeof e === 'string')
             },
+            ajaxUrl: {
+                type: String,
+                default: ""
+            }
         },
         created() {
         },
         methods: {
-
             onKeyUp(e) {
-                console.log(this.search)
+                this.getResults()
+            },
+            getResults() {
+                let vm = this
+                if(vm.search!="") {
+                    axios.get(vm.ajaxUrl)
+                        .then(function(res) {
+                            vm.results = res.data
+                        })
+                } else {
+                    vm.results = []
+                }
             }
         }
     };
