@@ -1,0 +1,25 @@
+{
+  "name": "vuejs2-ajax-suggestion-search",
+  "version": "1.0.0",
+  "description": "Vuejs2 component for ajax suggestion search input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazemPlus/vuejs2-ajax-suggestion-search.git"
+  },
+  "keywords": [
+    "vuejs2",
+    "suggestion",
+    "search",
+    "input"
+  ],
+  "author": "Mohammad Abedi <mabedi811@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazemPlus/vuejs2-ajax-suggestion-search/issues"
+  },
+  "homepage": "https://github.com/hazemPlus/vuejs2-ajax-suggestion-search#readme"
+}
